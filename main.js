@@ -1113,12 +1113,13 @@ var monster_color;
 var toRemoveTime = false;
 var timeBonus = new Object();
 var extraLife = new Object();
-var music=new Audio("./one.mp3");
+var music;
 for (var i = 0; i < 3; i++) {
     monsters[i] = new Object();
 }
 
 $("document").ready(function () {
+    music=new Audio("./one.mp3");
     context = canvas.getContext("2d");
     back = backCanvas.getContext("2d");
     back.clearRect(0, 0, canvas.width, canvas.height); //clean board
