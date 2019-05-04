@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="valid.js"></script>
+    <script src="settings.js"></script>
+    <script src="main.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="modal.css">
+    <link rel='stylesheet' href='design.css' type='text/css' />
+    <link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="Stylesheet"
+          type="text/css" />
+</head>
+
+<body background="wall.jpg">
+<header id="header">
+    <p ALIGN=CENTER>Aviv Cohen 305458317 | Saar Moskovich 301917472 </p>
+    <img src="pacman1.jpg" id="appName">
+</header>
+
+<div id="menu">
+    <li><a href="#" class="menuitem" id="welcome">Welcome</a></li>
+    <li><a href="#" class="menuitem" id="reg">Register</a></li>
+    <li><a href="#" class="menuitem" id="log">Login</a></li>
+    <li><a href="#" class="menuitem" class="btn btn-info btn-lg" data-toggle="modal"
+           data-target="#myModal">About</a></li>
+    <img src="logo.png" id="logo">
+</div>
+
+<div id="content">
+    <div id="main" class="content">
+        <button type="button" id="logBtn" class="mainBtn">Login</button>
+        <br>
+        <button type="button" id="regBtn" class="mainBtn">Register</button>
+    </div>
+
+    <div id="game" class="content">
+        <canvas id="backCanvas" height="600" width="600"></canvas>
+        <canvas id="canvas" height="600" width="600"></canvas>
+        <label id="usernamelbl">USERNAME:</label>
+        <label id="lblUsername" type="text"></label>
+        <div id="info">
+            <ul>
+                <li><label>SCORE:</label></li>
+                <li><input id="lblScore" type="text" /></li>
+                <li><label>TIME:</label></li>
+                <li><input id="lblTime" type="text" /></li>
+                <li><label>Rejects:</label></li>
+                <li><input id="lblReject" type="text" /></li>
+                <br>
+                <li><button type="button" id="newGame">Start New Game</button></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="settings" class="content">
+        <h1>Settings</h1>
+        <form id="settingsForm">
+            <table>
+                <tr>
+                    <td>
+                        <ul>
+                            <!--keys-->
+                            <li><label>Up:</label> <input type="text" name="up" id="up" size="12" value="ArrowUp" />
+                            </li>
+                            <li><label>Down:</label> <input type="text" id="down" name="down" size="12"
+                                                            value="ArrowDown" /></li>
+                            <li><label>Left:</label><input type="text" id="left" name="left" size="12"
+                                                           value="ArrowLeft" /></li>
+                            <li><label>Right:</label><input type="text" id="right" name="right" size="12"
+                                                            value="ArrowRight"></li>
+                            <!--time-->
+                            <li><label>Set Time (seconds):</label><input type="number" id="time" name="time"
+                                                                         size="12" min="60" /></li>
+                            <!--ghosts-->
+                            <li><label>Set #Ghosts:</label><input type="number" id="numOfGhosts" name="numOfGhosts"
+                                                                  size="12" min="1" max="3" /></li>
+                            <br>
+                        </ul>
+                    </td>
+                    <td>
+                        <ul>
+                            <!--balls-->
+                            <li><label>Set #Balls:</label><input type="number" id="numOfBalls" name="numOfBalls"
+                                                                 size="12" min="50" max="90" /></li>
+                            <li><label>Set 5 Color:</label><input type="color" id="fiveCol" name="fiveCol" size="12"
+                                                                  value="#000000" /></li>
+                            <li><label>Set 15 Color:</label><input type="color" id="fifteenCol" name="fifteenCol"
+                                                                   size="12" value="#0000FF" /></li>
+                            <li><label>Set 25 Color:</label><input type="color" id="twentyfiveCol"
+                                                                   name="twentyfiveCol" size="12" value="#00FF00" /></li>
+                            <!--buttons-->
+                            <li><button type="button" id="de" />Recommended</button></li>
+                            <li><button type="button" id="random">Random</button></li>
+                            <li><button type="button" id="save" />Save&Run</button></li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    <div id="register" class="content">
+        <h1>Registration Form</h1>
+        <form id="registerForm">
+            <ul>
+                <li><label for="userid">User id:</label><input type="text" name="userid" size="12" /></li>
+                <li><label for="passid">Password:</label><input type="password" name="passid" size="12" /></li>
+                <li><label for="username">First Name:</label><input type="text" name="Fname" size="50" /></li>
+                <li><label for="username">Last Name:</label><input type="text" name="Lname" size="50" /></li>
+                <li><label for="email">Email:</label><input type="email" id="email1" name="email" size="50" /></li>
+                <li><label for="Bdate">Birth date:</label><input type="text" id="datepicker" name="bDate" size="50"
+                                                                 value="01/01/1990"></li>
+                <li><button type="button" id="submitRegister">Submit</button></li>
+            </ul>
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"
+                    type="text/javascript"></script>
+            <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"
+                    type="text/javascript"></script>
+        </form>
+    </div>
+
+    <div id="login" class="content">
+        <h1>Login Form</h1>
+        <form id="loginForm">
+            <ul>
+                <li><label for="userid">User name:</label><input type="text" id="username" size="12" /></li>
+                <li><label for="passid">Password:</label><input type="password" id="password" size="12" /></li>
+                <br>
+                <li><button type="button" value="Login" id="submitLogin">Login</button></li>
+            </ul>
+        </form>
+    </div>
+</div>
+
+<div id="About">
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h1 class="modalP">About</h1>
+                </div>
+                <div class="modal-body">
+                    <label class="modalP">
+                        <br>
+                        Our Names:
+                        <br>
+                        Saar Moskovich
+                        <br>
+                        Aviv Cohen
+                        <br>
+                        <br>
+                        The JQuery plugins in the project are accessing to a lot of elements such as datepicker, inputs, buttons, etc.
+                        Also, to prevent scripts to run before the page has been loaded, we've used the "ready" method of the document.
+                        The major difficulty we faced with was the design and combining the elements together in the page. Another issue was the scaling handling and adjusting to the right resolution.
+                    </label>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="footer">Pacman game | contact us: avivj@post.bgu.ac.il or saarmo@post.bgu.ac.il
+</div>
+
+<audio id="myAudio">
+    <source src="One.mp3" type="audio/mpeg">
+    your browser does not support this audio element!
+</audio>
+</body>
+
+
+</html>
