@@ -1,6 +1,5 @@
 function stop() {
     window.clearInterval(interval);
-    music = document.getElementById("myAudio");
     lives = 3;
     fiftyCent.alive = true;
     toRemoveTime = false;
