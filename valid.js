@@ -66,15 +66,19 @@ $(document).ready(function () {
             alert("Invalid Email Address");
         }
         var userid = $('#registerForm').find('input[name=userid]').val();
-        var found = false;
+        var user = true;
         for (var i = 0; i < users.length; i++) {
             if (users[i].name == userid) {
-                found = true;
+                user = false;
                 break;
             }
         }
-        if(found){
+        if(user){
             alert("Username is in use");
+        }
+        else if(userid=="") {
+            alert("Username cannot be empty!");
+            user=false;
         }
 
         // ****** bdate need to get also the year!!! ******
@@ -83,7 +87,7 @@ $(document).ready(function () {
         var checkEmpty = lName == "" || fName == "" || pass == "" || email == "" || userid == "" || bDate == "";
         if (checkEmpty == false)
             checkEm = true;
-        var totalCheck = checkEmail && checkEm && checkNames && checkPassword && !found;
+        var totalCheck = checkEmail && checkEm && checkNames && checkPassword && user;
 
         // create a new user
         if (totalCheck == true) {
