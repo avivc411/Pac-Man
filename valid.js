@@ -49,6 +49,7 @@ $(document).ready(function () {
             return checkPassRes;
 
         }
+        debugger;
         checkPassword = checkPass();
         if(!checkPassword){
             alert("Invalid Password");
