@@ -50,7 +50,7 @@ $(document).ready(function () {
 
         }
         checkPassword = checkPass();
-        if(!checkPass){
+        if(!checkPassword){
             alert("Invalid Password");
         }
         // email field checking
