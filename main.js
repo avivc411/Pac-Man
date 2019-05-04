@@ -10,7 +10,6 @@ function stop() {
 
 function updateValues(up, down, left, right, numOfBalls,
     fiveCol, fifteenCol, twentyfiveCol, time, numOfGhosts) {
-    console.log("update");
     upKey = up;
     downKey = down;
     leftKey = left;
@@ -1040,7 +1039,6 @@ function UpdatePosition() {
         moveMonsters();
     //eaten by monster
     if (eatingCheck()) {
-        console.log("eaten");
         lives--;
         numOfRejects++;
         score -= 10;
