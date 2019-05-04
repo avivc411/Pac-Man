@@ -49,7 +49,8 @@ function Start() {
     twentyFive = numOfFood * 0.1;
     fiftyCent.alive = true;
     numOfRejects=0;
-    music = document.getElementById("myAudio");
+    //music = document.getElementById("myAudio");
+    music=new Audio("one.mp3");
     music.pause();
     music.currentTime = 0;
     music.loop=true;
