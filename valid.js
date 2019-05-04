@@ -53,7 +53,6 @@ $(document).ready(function () {
         if(!checkPass){
             alert("Invalid Password");
         }
-        var checkEmail;
         // email field checking
         var email = $('#registerForm').find('input[name="email"]').val();
 

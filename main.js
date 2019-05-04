@@ -48,8 +48,6 @@ function Start() {
     twentyFive = numOfFood * 0.1;
     fiftyCent.alive = true;
     numOfRejects=0;
-    //music = document.getElementById("myAudio");
-    music=new Audio("./one.mp3");
     music.pause();
     music.currentTime = 0;
     music.loop=true;
@@ -1115,7 +1113,7 @@ var monster_color;
 var toRemoveTime = false;
 var timeBonus = new Object();
 var extraLife = new Object();
-var music;
+var music=new Audio("./one.mp3");
 for (var i = 0; i < 3; i++) {
     monsters[i] = new Object();
 }
